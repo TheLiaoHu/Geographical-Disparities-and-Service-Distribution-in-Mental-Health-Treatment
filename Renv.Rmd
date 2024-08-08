@@ -1,0 +1,51 @@
+---
+title: "Renv"
+author: Group 3
+date: "2024-08-07"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Install Renv
+
+```{install renv}
+install.packages("renv")
+library(renv)
+```
+
+##Setting Working Directory
+```{r}
+setwd("/Users/xiemanhui/Desktop/EDA Project")
+```
+
+## Initialize "renv"
+```{r pressure, echo=FALSE}
+renv::init()
+```
+
+##Install necessary packages
+```{r}
+# Ensure the necessary packages are installed
+if (!requireNamespace("usmap", quietly = TRUE)) {
+  install.packages("usmap")
+}
+
+if (!requireNamespace("dplyr", quietly = TRUE)) {
+  install.packages("dplyr")
+}
+
+if (!requireNamespace("ggplot2", quietly = TRUE)) {
+  install.packages("ggplot2")
+}
+  install.packages("sf")
+```
+
+
+```{r}
+renv::snapshot()
+```
+
+
